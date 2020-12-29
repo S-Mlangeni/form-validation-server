@@ -8,7 +8,6 @@ const connection = mysql.createConnection({
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DB,
-    port: process.env.DB_PORT
 })
 
 //Connecting with mysql db:
