@@ -8,7 +8,7 @@ const dbController = require("./database") // "database" file in current/same di
 
 const express_app = express();
 
-express_app.listen(3000);
+express_app.listen(process.env.PORT || 3000); /* Port number used on the cloud server */
 
 
 /* express_app.set("view engine", "ejs"); *//* Sets the ejs view-engines/files as the 
