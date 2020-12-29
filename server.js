@@ -2,8 +2,6 @@
 
 const express = require("express");
 const cors = require("cors");
-const dotenv = require("dotenv");
-dotenv.config();
 const dbController = require("./database") // "database" file in current/same directory/folder
 
 const express_app = express();
@@ -30,10 +28,11 @@ in json format. Otherwise, requested data will result in an "undefined" result. 
 express_app.get("/", (request, response) => {
     /*res.render("index"); *//* The "render()" method is used to send the specified ejs view to 
     the browser/client-side. */
-    response.sendFile("client/index.html", {root: __dirname}); /* (file path and name, with respect 
+    /*response.sendFile("client/index.html", {root: __dirname}); *//* (file path and name, with respect 
     to the specified directory (the "NodeJs Tutorial"/(project root) directory in this case)). 
     {root: __dirname}" refers to the current directory used the by the project (i.e 
     NODEJS TUTORIAL). */
+    response.send("<h1>hello</h1>");
 })
 
 express_app.post("/registration-API", dbController.db_entry /*(req, res) => {
